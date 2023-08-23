@@ -1,0 +1,25 @@
+@media only screen and (min-width: 400px) {
+  .contentMovies {
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #1c1c1c;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .contentMovies {
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #1c1c1c;
+  }
+}
