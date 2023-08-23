@@ -17,29 +17,26 @@ export const NavBar = () => {
   }, []);
 
   return (
-    <Navbar bg="dark" expand="md" data-bs-theme="dark">
+    <Navbar bg="dark" expand="md" variant="dark">
       <Container>
         <Navbar.Brand href="#home">MOVIES</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto" ml-auto>
+          <Nav className="ml-auto">
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
             <Nav.Link href="#link">Link</Nav.Link>
             <NavDropdown title="All genres" id="basic-nav-dropdown">
-              {allGenres?.map((el) => {
-                return (
-                  <NavDropdown.Item
-                    href="#action/3.1"
-                    onClick={() =>
-                      dispatch(FilterMoviesGenre(el, filterMovies))
-                    }
-                  >
-                    {el}
-                  </NavDropdown.Item>
-                );
-              })}
+              {allGenres?.map((el) => (
+                <NavDropdown.Item
+                  href="#action/3.1"
+                  key={el} // Agrega una clave única
+                  onClick={() => dispatch(FilterMoviesGenre(el, filterMovies))}
+                >
+                  {el}
+                </NavDropdown.Item>
+              ))}
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
