@@ -5,36 +5,35 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { AllgenresMap } from "../../redux/actions/index";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { FilterMoviesGenre, GetAllMovies } from "../../redux/actions/index";
+import { FilterMoviesGenre } from "../../redux/actions/index";
 import { useEffect } from "react";
 
 export const NavBar = () => {
   const dispatch = useDispatch();
-  const { allGenres, filterMovies, allMovies } = useSelector((state) => state);
+  const { allGenres, filterMovies } = useSelector((state) => state);
 
   useEffect(() => {
     !allGenres.length && dispatch(AllgenresMap());
   }, []);
 
   return (
-    <Navbar bg="dark" data-bs-theme="dark">
+    <Navbar bg="dark" expand="md" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="#home">MOVIES</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto" ml-auto>
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-            {/* <Nav.Link href="#home">Home</Nav.Link> */}
             <Nav.Link href="#link">Link</Nav.Link>
             <NavDropdown title="All genres" id="basic-nav-dropdown">
               {allGenres?.map((el) => {
                 return (
                   <NavDropdown.Item
                     href="#action/3.1"
-                    onClick={(e) =>
-                      dispatch(FilterMoviesGenre(el, filterMovies, allMovies))
+                    onClick={() =>
+                      dispatch(FilterMoviesGenre(el, filterMovies))
                     }
                   >
                     {el}
