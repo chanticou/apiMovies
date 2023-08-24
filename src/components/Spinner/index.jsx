@@ -13,28 +13,21 @@ const spinnerContainerStyle = {
   left: 0,
   width: "100%",
   height: "100%",
-  backgroundColor: "rgba(0, 0, 0, 0.7)", // Fondo negro semitransparente
+  padding: "100px 0",
+  backgroundColor: "black", // Semi-transparent black background
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  zIndex: 9999, // Asegura que el spinner esté en la parte superior
+  zIndex: 9999, // High z-index to be on top
 };
 
 function Spinner() {
-  let [loading, setLoading] = useState(true);
   let [color, setColor] = useState("#ffffff");
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Simulación de carga, reemplaza con tu lógica real
-  }, []);
 
   return (
     <div style={spinnerContainerStyle}>
       <ClipLoader
         color={color}
-        loading={loading}
         css={override}
         size={150}
         aria-label="Loading Spinner"

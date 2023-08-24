@@ -19,7 +19,7 @@ export const NavBar = () => {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#home">MOVIES</Navbar.Brand>
+        <Navbar.Brand href="#Movies">MOVIES</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -27,12 +27,12 @@ export const NavBar = () => {
               Home
             </Nav.Link>
             {/* <Nav.Link href="#home">Home</Nav.Link> */}
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link href="">Link</Nav.Link>
             <NavDropdown title="All genres" id="basic-nav-dropdown">
               {allGenres?.map((el) => {
                 return (
                   <NavDropdown.Item
-                    href="#action/3.1"
+                    href=""
                     onClick={(e) =>
                       dispatch(FilterMoviesGenre(el, filterMovies, allMovies))
                     }

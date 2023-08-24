@@ -1,6 +1,6 @@
 /* height: 650px; */
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 300px) {
   .contentBody {
     display: flex;
     align-content: center;
@@ -11,38 +11,12 @@
     margin: auto;
     background-color: #1c1c1c;
   }
-
-  /* .App {
-    text-align: center;
-    background-color: #1c1c1c;
-    color: #ffffff;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    align-content: center;
-    justify-content: space-evenly;
-    align-items: center;
-  } */
 }
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-width: 768px) {
   .App {
     background-color: #1c1c1c;
-    /* max-width: 100%; */
-
-    /* height: 672px; */
-    /* text-align: center;
-    background-color: #1c1c1c;
-    color: #ffffff;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    align-content: center;
-    align-items: center;
-     */
   }
   .contentBody {
     margin-top: 50px;

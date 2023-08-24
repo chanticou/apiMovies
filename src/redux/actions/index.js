@@ -73,8 +73,26 @@ export function AllgenresMap() {
     const genres =
       "https://api.themoviedb.org/3/genre/tv/list?api_key=04972ebae94be5b780473d0188fcd20c";
     const getApi = await axios.get(genres);
+    let removeGenresArr = [
+      "Action & Adventure",
+      "Documentary",
+      "Drama",
+      "Kids",
+      "News",
+      "Reality",
+      "Sci-Fi & Fantasy",
+      "Soap",
+      "Talk",
+      "War & Politics",
+      "Western",
+    ];
 
-    let allGenres = getApi.data.genres.map((el) => el.name);
+    // Filter out the genres that are not present
+    let filterGenreApi = getApi.data.genres.filter(
+      (el) => !removeGenresArr.includes(el.name)
+    );
+
+    let allGenres = filterGenreApi.map((el) => el.name);
     allGenres.unshift("All");
 
     dispatch({
@@ -91,7 +109,28 @@ export function FilterMoviesGenre(genre, filterMovies, allMovies) {
       "https://api.themoviedb.org/3/genre/tv/list?api_key=04972ebae94be5b780473d0188fcd20c";
 
     const getApi = await axios.get(genres);
-    let getAllIdsGenres = getApi.data.genres.filter((el) => {
+    // console.log(getApi.data.genres);
+    let removeGenresArr = [
+      "Action & Adventure",
+      "Documentary",
+      "Drama",
+      "Kids",
+      "News",
+      "Reality",
+      "Sci-Fi & Fantasy",
+      "Soap",
+      "Talk",
+      "War & Politics",
+      "Western",
+    ];
+
+    // Filter out the genres that are not present
+    let filterGenreApi = getApi.data.genres.filter(
+      (el) => !removeGenresArr.includes(el.name)
+    );
+
+    // Return the name that matches with the genre
+    let getAllIdsGenres = filterGenreApi.filter((el) => {
       return el.name == genre;
     });
 

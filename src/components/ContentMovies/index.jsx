@@ -12,9 +12,10 @@ export const ContentMovies = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(GetAllMovies()).then(() => {
+    setTimeout(() => {
       setloading(false);
-    });
+    }, 3000);
+    dispatch(GetAllMovies());
   }, []);
 
   return (
@@ -23,7 +24,7 @@ export const ContentMovies = () => {
         <Spinner />
       ) : (
         filterMovies?.map((el) => {
-          return <Movies data={el} />;
+          return <Movies key={el.id} data={el} />;
         })
       )}
     </>

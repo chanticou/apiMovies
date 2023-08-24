@@ -43,7 +43,7 @@ export const MovieDetail = () => {
           <p className="overviewDetail">{movie.overview}</p>
           <div className="contentGenre">
             {genreId?.map((el) => {
-              return <span>{el} </span>;
+              return <span key={el.id}>{el} </span>;
             })}
           </div>
         </div>
