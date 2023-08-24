@@ -36,7 +36,7 @@
     font-size: 2rem;
   }
   .overviewDetail {
-    width: 500px;
+    width: 270px;
     text-align: justify;
     padding: 7px 15px;
     color: #fff;
@@ -53,14 +53,15 @@
   .contentGenre {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     color: white;
     align-items: stretch;
-    width: 464px;
-    justify-content: space-between;
+    width: 200px;
+    justify-content: space-around;
     font-size: 1.2rem;
   }
   .age {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
 }
 
