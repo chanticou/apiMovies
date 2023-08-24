@@ -1,5 +1,5 @@
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 250px) {
   /* Styles */
   .contentAllDetailMovie {
     display: flex;
