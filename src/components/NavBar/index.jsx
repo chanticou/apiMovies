@@ -17,9 +17,11 @@ export const NavBar = () => {
   }, []);
 
   return (
-    <Navbar bg="dark" data-bs-theme="dark">
+    <Navbar bg="dark" expand="lg" variant="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#Movies">MOVIES</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/Movies">
+          MOVIES
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -29,18 +31,17 @@ export const NavBar = () => {
             {/* <Nav.Link href="#home">Home</Nav.Link> */}
             <Nav.Link href="">Link</Nav.Link>
             <NavDropdown title="All genres" id="basic-nav-dropdown">
-              {allGenres?.map((el) => {
-                return (
-                  <NavDropdown.Item
-                    href=""
-                    onClick={(e) =>
-                      dispatch(FilterMoviesGenre(el, filterMovies, allMovies))
-                    }
-                  >
-                    {el}
-                  </NavDropdown.Item>
-                );
-              })}
+              {allGenres?.map((el) => (
+                <NavDropdown.Item
+                  key={el} // Add a unique key
+                  href=""
+                  onClick={(e) =>
+                    dispatch(FilterMoviesGenre(el, filterMovies, allMovies))
+                  }
+                >
+                  {el}
+                </NavDropdown.Item>
+              ))}
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
